@@ -14,10 +14,6 @@ app.use(bodyParser.json({ limit: '30mb', extended: true }));
 app.use(bodyParser.urlencoded({ limit: '30mb', extended: true }));
 app.use(cors());
 
-app.get('/test', (req,res)=>{
-  res.json({msg:"hello Hana your app is runnig"})
-})
-
 app.use('/posts', postRoutes);
 
 const CONNECTION_URL = process.env.CONNECTION_URL;
