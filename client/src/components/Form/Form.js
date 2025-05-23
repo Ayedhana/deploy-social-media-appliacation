@@ -9,7 +9,7 @@ import {
   StyledForm,
   StyledFileInput,
   StyledButtonSubmit,
-} from './FormStyles';
+} from './styles';
 
 const Form = ({ currentId, setCurrentId }) => {
   const [postData, setPostData] = useState({ creator: '', title: '', message: '', tags: '', selectedFile: '' });

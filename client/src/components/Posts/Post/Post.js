@@ -15,7 +15,7 @@ import {
   Details,
   Title,
   StyledCardActions
-} from './PostStyles';
+} from './styles';
 
 const Post = ({ post, setCurrentId }) => {
   const dispatch = useDispatch();
