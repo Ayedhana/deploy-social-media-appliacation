@@ -12,7 +12,7 @@ dotenv.config();
 const app = express();
 
 const corsOptions = {
-  origin: 'https://social-media-appliacation-backend.vercel.app/posts', // ton frontend déployé
+  origin: 'https://social-media-appliacation-frontend.vercel.app/', // ton frontend déployé
   methods: 'GET,POST,PATCH,DELETE',
   credentials: true,
 };
