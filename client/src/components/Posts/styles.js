@@ -1,14 +1,8 @@
-import { styled } from '@mui/styles';
+import { styled } from '@mui/material/styles';
+import { Grid } from '@mui/material';
 
-export default styled((theme) => ({
-  mainContainer: {
-    display: 'flex',
-    alignItems: 'center',
-  },
-  smMargin: {
-    margin: theme.spacing(1),
-  },
-  actionDiv: {
-    textAlign: 'center',
-  },
+export const StyledGridContainer = styled(Grid)(({ theme }) => ({
+  display: 'flex',
+  alignItems: 'stretch',
+  spacing: 3,
 }));
