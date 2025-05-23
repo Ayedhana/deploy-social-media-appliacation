@@ -1,6 +1,6 @@
-import { makeStyles } from '@mui/styles';
+import { styled } from '@mui/styles';
 
-export default makeStyles(() => ({
+export default styled(() => ({
   appBar: {
     borderRadius: 15,
     margin: '30px 0',
