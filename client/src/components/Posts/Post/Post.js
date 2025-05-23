@@ -7,11 +7,11 @@ import moment from 'moment';
 import { useDispatch } from 'react-redux';
 
 import { likePost, deletePost } from '../../../actions/posts';
-import useStyles from './styles';
+import styled from './styles';
 
 const Post = ({ post, setCurrentId }) => {
   const dispatch = useDispatch();
-  const classes = useStyles();
+  const classes = styled();
 
   return (
     <Card className={classes.card}>
