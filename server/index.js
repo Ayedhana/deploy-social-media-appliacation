@@ -12,16 +12,28 @@ dotenv.config();
 const app = express();
 
 const corsOptions = {
-  origin: 'https://social-media-appliacation-backend.vercel.app/posts', // ton frontend déployé
+  origin: 'http://localhost:3000', // sans slash final
   methods: 'GET,POST,PATCH,DELETE',
   credentials: true,
 };
 
 app.use(cors(corsOptions));
-
 app.use(bodyParser.json({ limit: '30mb', extended: true }));
 app.use(bodyParser.urlencoded({ limit: '30mb', extended: true }));
 
 app.use('/posts', postRoutes);
 
-export default app; // nécessaire pour Vercel
+// ⚠️ AJOUT IMPORTANT POUR LANCER LE SERVEUR
+const PORT = process.env.PORT || 5000;
+
+mongoose
+  .connect(process.env.CONNECTION_URL, {
+    useNewUrlParser: true,
+    useUnifiedTopology: true,
+  })
+  .then(() =>
+    app.listen(PORT, () =>
+      console.log(`✅ Serveur démarré sur http://localhost:${PORT}`)
+    )
+  )
+  .catch((error) => console.error('Erreur de connexion MongoDB:', error.message));

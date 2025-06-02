@@ -5,13 +5,31 @@ import { useDispatch } from 'react-redux';
 import Posts from './components/Posts/Posts';
 import Form from './components/Form/Form';
 import { getPosts } from './actions/posts';
-import styled from './styles';
 import memories from './images/memories.png';
+
+// styles simples sans makeStyles pour éviter erreurs
+const appBarStyle = {
+  borderRadius: 15,
+  margin: '30px 0',
+  display: 'flex',
+  flexDirection: 'row',
+  justifyContent: 'center',
+  alignItems: 'center',
+  padding: '10px',
+};
+
+const headingStyle = {
+  color: '#1976d2',
+  marginRight: '20px',
+};
+
+const imageStyle = {
+  marginLeft: '15px',
+};
 
 const App = () => {
   const [currentId, setCurrentId] = useState(0);
   const dispatch = useDispatch();
-  const classes = styled();
 
   useEffect(() => {
     dispatch(getPosts());
@@ -19,13 +37,13 @@ const App = () => {
 
   return (
     <Container maxWidth="lg">
-      <AppBar className={classes.appBar} position="static" color="inherit">
-        <Typography className={classes.heading} variant="h2" align="center">Memories</Typography>
-        <img className={classes.image} src={memories} alt="icon" height="60" />
+      <AppBar position="static" color="inherit" style={appBarStyle}>
+        <Typography variant="h2" align="center" style={headingStyle}>Memories</Typography>
+        <img src={memories} alt="icon" height="60" style={imageStyle} />
       </AppBar>
       <Grow in>
         <Container>
-          <Grid container justify="space-between" alignItems="stretch" spacing={3}>
+          <Grid container justifyContent="space-between" alignItems="stretch" spacing={3}>
             <Grid item xs={12} sm={7}>
               <Posts setCurrentId={setCurrentId} />
             </Grid>
