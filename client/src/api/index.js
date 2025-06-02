@@ -1,7 +1,7 @@
 import axios from 'axios';
 
 // Utilise HTTP, pas HTTPS
-const API = axios.create({ baseURL: 'http://localhost:5000' });
+const API = axios.create({ baseURL: 'https://social-media-appliacation-backend.vercel.app' });
 
 export const fetchPosts = () => API.get('/posts');
 export const createPost = (newPost) => API.post('/posts', newPost);
