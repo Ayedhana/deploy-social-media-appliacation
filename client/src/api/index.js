@@ -1,6 +1,7 @@
 import axios from 'axios';
 
-const url = 'https://localhost:5000';
+// Utilise HTTP, pas HTTPS
+const API = axios.create({ baseURL: 'http://localhost:5000' });
 
 export const fetchPosts = () => API.get('/posts');
 export const createPost = (newPost) => API.post('/posts', newPost);
