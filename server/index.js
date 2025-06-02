@@ -12,7 +12,7 @@ dotenv.config();
 const app = express();
 
 const corsOptions = {
-  origin: 'http://localhost:3000', // sans slash final
+  origin: 'https://social-media-appliacation-frontend.vercel.app', // sans slash final
   methods: 'GET,POST,PATCH,DELETE',
   credentials: true,
 };
